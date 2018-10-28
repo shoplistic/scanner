@@ -1,20 +1,37 @@
 #include <iostream>
 #include "Pi2c/pi2c.h"
 #include <linux/types.h>
-// #include <unistd.h>
 
 #define DATA_LENGTH 5
+#define IRADDR 0x30
+#define REV0 false
 
 // using namespace std;
 
-u_int32_t readValue(Pi2c con, char addr) {
+namespace IRi2c {
+
+    void printData(char buffer[DATA_LENGTH], uint32_t value) {
+
+        printf("0x%02x = 0x", buffer[0]);
+        for (u_int8_t i = 1; i < DATA_LENGTH; i++) {
+            printf("%02x", buffer[i]);
+        }
+        printf(" (hex)\n");
+        printf("0x%02x = %d (decimal)\n", buffer[0], value);
+
+    }
+
+}
+
+u_int32_t readValue(char addr) {
+
+    Pi2c irBoard(IRADDR, REV0);
 
     char w[DATA_LENGTH] = { (char)(addr + 0x80), 0x00, 0x00, 0x00, 0x00 };
-    // char w[] = { 0x0c + 0x80, 0x00, 0x00, 0x00, 0x00 };
-    con.i2cWrite(w, sizeof(w));
+    irBoard.i2cWrite(w, sizeof(w));
 
     char buffer[DATA_LENGTH];
-    con.i2cRead(buffer, sizeof(buffer));
+    irBoard.i2cRead(buffer, sizeof(buffer));
 
     u_int32_t r = 0;
 
@@ -28,19 +45,13 @@ u_int32_t readValue(Pi2c con, char addr) {
         r += (u_int32_t)buffer[i-1] << (((i - 1) * 8) - 8);
     }
 
-    // Print the data
-    printf("0x%02x = 0x", buffer[0]);
-    for (u_int8_t i = 1; i < sizeof(buffer); i++) {
-        printf("%02x", buffer[i]);
-    }
-    printf(" (hex)\n");
-    printf("0x%02x = %d (decimal)\n", buffer[0], r);
+    IRi2c::printData(buffer, r);
 
     return r;
 
 }
 
-int writeValue(Pi2c con, char addr, int32_t data) {
+int writeValue(char addr, int32_t data) {
 
     char buffer[DATA_LENGTH];
 
@@ -56,14 +67,11 @@ int writeValue(Pi2c con, char addr, int32_t data) {
         buffer[i] = (u_int8_t)((((u_int32_t)data)&(0x000000ff<<((i * 8) - 8))) >> ((i * 8) - 8));
     }
 
-    printf("0x%02x = 0x", buffer[0]);
-    for (u_int8_t i = 1; i < sizeof(buffer); i++) {
-        printf("%02x", buffer[i]);
-    }
-    printf(" (hex)\n");
-    printf("0x%02x = %d (decimal)\n", buffer[0], data);
+    IRi2c::printData(buffer, data);
 
-    return con.i2cWrite(buffer, sizeof(buffer));
+    Pi2c irBoard(IRADDR, REV0);
+
+    return irBoard.i2cWrite(buffer, sizeof(buffer));
 
 }
 
@@ -71,23 +79,10 @@ int main(int argc, char *argv[]) {
 
     printf("i2c test thing\n");
 
-    Pi2c irBoard(0x30, false);
-
-    // writeValue(irBoard, 0x0b, 3000);
-    readValue(irBoard, 0x0c);
-    readValue(irBoard, 0x0c);
-    readValue(irBoard, 0x0c);
-
-    // usleep(1000);
-
-    // char a[] = {0x0C+0x80, 0x00, 0x00, 0x00, 0x00};
-    // irBoard.i2cWrite(a, 5);
-
-    // char buffer[5];
-    // irBoard.i2cRead(buffer, 5);
-    // printf("data: %02x%02x%02x%02x%02x\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
-    // irBoard.i2cRead(buffer, 5);
-    // printf("data: %02x%02x%02x%02x%02x\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
+    writeValue(0x0a, 0); // Max current (mA)
+    writeValue(0x0b, 1000); // Max effect (mW)
+    writeValue(0x0d, 50); // Max temp (C)
+    readValue(0x01);
 
     return 0;
 
