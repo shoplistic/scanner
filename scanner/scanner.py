@@ -8,7 +8,7 @@ import imutils
 import time
 import cv2
 
-showWindow = False
+showWindow = True
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] Starting video stream...")
