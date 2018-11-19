@@ -1,4 +1,4 @@
-#include <linux/types.h>
+#include <stdint.h>
 #include <stdio.h>
 #include "../Pi2c/pi2c.h"
 
@@ -67,8 +67,8 @@ enum ParamName
     IR_LIGHTSENSOR
 };
 
-void printData(char buffer[DATA_LENGTH], u_int32_t value);
-u_int32_t readData(ParamName addr);
-u_int32_t writeData(ParamName addr, u_int32_t value);
+void printData(char buffer[DATA_LENGTH], uint32_t value);
+uint32_t readData(ParamName addr);
+uint32_t writeData(ParamName addr, uint32_t value);
 
 }

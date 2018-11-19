@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 # Based on https://www.pyimagesearch.com/2018/05/21/an-opencv-barcode-and-qr-code-scanner-with-zbar/
 
 # import the necessary packages
@@ -7,22 +9,29 @@ import datetime
 import imutils
 import time
 import cv2
+from lib import api
+from lib.switch import switch
 
 showWindow = True
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] Starting video stream...")
-#vs = VideoStream(src=0).start()
-vs = VideoStream(usePiCamera=True, resolution=(640, 400), framerate=30).start()
+vs = VideoStream(usePiCamera=True, resolution=(640, 400), framerate=20).start()
 time.sleep(2.0)
-print("[INFO] Started video stream...")
-
-# found = set()
+print("[INFO] Video stream ready")
 
 # loop over the frames from the video stream
 while True:
+
+    # Don't bother running the CPU-intensive stuff unless the drawer is open
+    if not switch.is_pressed:
+        # print('closed')
+        time.sleep(0.5)
+        continue
+
     # grab the frame from the threaded video stream and resize it to
     # have a maximum width of 400 pixels
+
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
 
@@ -42,8 +51,12 @@ while True:
             cv2.putText(frame, text, (x, y - 10),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-        print("Barcode data: " + barcodeData)
-        # time.sleep(1.0)
+        # print("Barcode data: " + barcodeData)
+        g = api.get(barcodeData)
+        if g:
+            if api.add(g):
+                print(g['display_name'] + ' added')
+                time.sleep(1.0)
 
     # show the output frame
     if showWindow:
@@ -52,8 +65,8 @@ while True:
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
-    if key == ord("q"):
-        break
+    # if key == ord("q"):
+    #     break
 
 
 # do a bit of cleanup
