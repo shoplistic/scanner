@@ -6,3 +6,4 @@
 
 ### TODO:
 * [ ] Install script
+* [ ] Diagram
