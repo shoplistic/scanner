@@ -5,18 +5,23 @@
 # import the necessary packages
 from imutils.video import VideoStream
 from pyzbar import pyzbar
+from sys import argv
 import datetime
 import imutils
 import time
 import cv2
-from lib import api
+from lib import api, led
 from lib.switch import switch
 
-showWindow = True
+showWindow = False
+
+if len(argv) == 2:
+    showWindow = argv[1] == 'debug'
+    print('Showing video stream')
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] Starting video stream...")
-vs = VideoStream(usePiCamera=True, resolution=(640, 400), framerate=20).start()
+vs = VideoStream(usePiCamera=True, resolution=(640, 400), framerate=25).start()
 time.sleep(2.0)
 print("[INFO] Video stream ready")
 
@@ -56,7 +61,12 @@ while True:
         if g:
             if api.add(g):
                 print(g['display_name'] + ' added')
-                time.sleep(1.0)
+                led.green.timer(0.3)
+            else:
+                led.red.timer(0.3)
+        else:
+            led.red.timer(0.3)
+
 
     # show the output frame
     if showWindow:
