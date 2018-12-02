@@ -6,4 +6,5 @@
 
 ### TODO:
 * [x] Install script
-* [ ] Diagram
+* [ ] Diagram / Schematic
+* [x] pwm?

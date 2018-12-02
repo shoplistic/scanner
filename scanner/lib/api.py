@@ -3,14 +3,14 @@ import json
 import os.path
 import simplejson
 
-confFile = './conf.json'
+authFile = './auth.json'
 
 def confExists():
-    return os.path.isfile(confFile) 
+    return os.path.isfile(authFile)
 
 def getBearer():
     if confExists():
-        with open(confFile) as f:
+        with open(authFile) as f:
             conf = json.load(f)
             return conf['bearer']
     else:
@@ -19,7 +19,7 @@ def getBearer():
 def login(username, password):
     r = requests.post('https://api.shopper.ink/v1/auth', json={ 'username': username, 'password': password })
     if r.status_code == 200:
-        f = open(confFile, 'w')
+        f = open(authFile, 'w')
         f.write(simplejson.dumps(r.json(), indent=4))
         f.close()
         return True

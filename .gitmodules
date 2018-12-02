@@ -1,3 +1,0 @@
-[submodule "i2c/src/Pi2c"]
-	path = i2c/src/Pi2c
-	url = https://github.com/JohnnySheppard/Pi2c.git

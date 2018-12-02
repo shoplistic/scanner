@@ -3,20 +3,17 @@
 # Based on https://www.pyimagesearch.com/2018/05/21/an-opencv-barcode-and-qr-code-scanner-with-zbar/
 
 # import the necessary packages
+import datetime, imutils, time, cv2
 from imutils.video import VideoStream
 from pyzbar import pyzbar
 from sys import argv
-import datetime
-import imutils
-import time
-import cv2
-from lib import api, led
+from lib import api, status
 from lib.switch import switch
 
-showWindow = False
+debug = False
 
 if len(argv) == 2:
-    showWindow = argv[1] == 'debug'
+    debug = argv[1] == '--debug'
     print('Showing video stream')
 
 # initialize the video stream and allow the camera sensor to warm up
@@ -25,61 +22,58 @@ vs = VideoStream(usePiCamera=True, resolution=(640, 400), framerate=25).start()
 time.sleep(2.0)
 print("[INFO] Video stream ready")
 
-# loop over the frames from the video stream
 while True:
 
-    # Don't bother running the CPU-intensive stuff unless the drawer is open
-    if not switch.is_pressed:
-        # print('closed')
-        time.sleep(0.5)
-        continue
+    try:
 
-    # grab the frame from the threaded video stream and resize it to
-    # have a maximum width of 400 pixels
+        # Don't bother running the CPU-intensive stuff unless the drawer is open
+        if not switch.is_pressed:
+            # print('closed')
+            time.sleep(0.5)
+            continue
 
-    frame = vs.read()
-    frame = imutils.resize(frame, width=400)
+        # grab the frame from the threaded video stream and resize it to
+        # have a maximum width of 400 pixels
 
-    # find the barcodes in the frame and decode each of the barcodes
-    barcodes = pyzbar.decode(frame)
+        frame = vs.read()
+        frame = imutils.resize(frame, width=400)
 
-    # loop over the detected barcodes
-    for barcode in barcodes:
-        barcodeData = barcode.data.decode("utf-8")
-        barcodeType = barcode.type
+        # find the barcodes in the frame and decode each of the barcodes
+        barcodes = pyzbar.decode(frame)
 
-        # draw the barcode data and barcode type on the image
-        if showWindow:
-            (x, y, w, h) = barcode.rect
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
-            text = "{} ({})".format(barcodeData, barcodeType)
-            cv2.putText(frame, text, (x, y - 10),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+        # loop over the detected barcodes
+        for barcode in barcodes:
+            barcodeData = barcode.data.decode("utf-8")
+            barcodeType = barcode.type
 
-        # print("Barcode data: " + barcodeData)
-        g = api.get(barcodeData)
-        if g:
-            if api.add(g):
-                print(g['display_name'] + ' added')
-                led.green.timer(0.3)
+            # draw the barcode data and barcode type on the image
+            if debug:
+                print("Barcode data: " + barcodeData)
+                (x, y, w, h) = barcode.rect
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                text = "{} ({})".format(barcodeData, barcodeType)
+                cv2.putText(frame, text, (x, y - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+
+            # Attempt to add item
+            g = api.get(barcodeData)
+            if g:
+                if api.add(g):
+                    print(g['display_name'] + ' added')
+                    status.green.timer(0.3)
+                else:
+                    status.red.timer(0.3)
             else:
-                led.red.timer(0.3)
-        else:
-            led.red.timer(0.3)
+                status.red.timer(0.3)
 
+        # show the output frame
+        if debug:
+            cv2.imshow("Barcode Scanner", frame)
+            key = cv2.waitKey(1) & 0xFF
 
-    # show the output frame
-    if showWindow:
-        cv2.imshow("Barcode Scanner", frame)
-
-    key = cv2.waitKey(1) & 0xFF
-
-    # if the `q` key was pressed, break from the loop
-    # if key == ord("q"):
-    #     break
-
-
-# do a bit of cleanup
-print("[INFO] Cleaning up...")
-cv2.destroyAllWindows()
-vs.stop()
+    except KeyboardInterrupt:
+        # do a bit of cleanup
+        print("[INFO] Cleaning up...")
+        cv2.destroyAllWindows()
+        vs.stop()
+        exit(0)

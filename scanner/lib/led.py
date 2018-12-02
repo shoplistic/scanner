@@ -1,25 +1,13 @@
-from gpiozero import LED
-from time import sleep
+import pigpio
 
-# red = LED(17)
-# blue = LED(27)
-# green = LED(22)
+pwm_pin = 18 # GPIO Pin
+freq = 5100 # Frequency (Hz)
+# dc = 0 # Duty cycle (%)
 
-class Led(LED):
-    # def __init__(self, pin):
-    #     self.led = LED(pin)
+pi = pigpio.pi()
 
-    # def on(self):
-    #     self.led.on()
+def on(intensity):
+    pi.hardware_PWM(pwm_pin, freq, 1e4 * (intensity % 100))
 
-    # def off(self):
-    #     self.led.off()
-
-    def timer(self, time):
-        self.on()
-        sleep(time)
-        self.off()
-
-red = Led(17)
-green = Led(27)
-blue = Led(22)
+def off():
+    pi.hardware_PWM(pwm_pin, 0, 0)

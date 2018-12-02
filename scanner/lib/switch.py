@@ -1,18 +1,17 @@
 from gpiozero import Button
-import ir
-import led
+import status, led
 
 switch = Button(23)
 
 def onp():
     print('Open')
-    ir.on('50')
-    led.blue.on()
+    led.on(3)
+    status.blue.on()
 
 def onr():
     print('Closed')
-    ir.off()
-    led.blue.off()
+    led.off()
+    status.blue.off()
 
 switch.when_pressed = onp
 switch.when_released = onr

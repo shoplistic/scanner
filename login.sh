@@ -9,4 +9,4 @@ read -sp 'Password: ' password
 echo
 
 python2 ./scanner/login.py $username $password
-mv conf.json scanner/conf.json
+mv auth.json scanner/auth.json
