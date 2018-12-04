@@ -1,0 +1,5 @@
+dword1511-pmic-dcdc.lbr: https://github.com/dword1511/eagle-lbr/blob/master/dword1511-pmic-dcdc.lbr
+FLYFISH.lbr: http://www.flyfish-tech.com/FF32/index.php
+mbed-HDK-IC.lbr: https://github.com/ARMmbed/mbed-HDK/blob/master/Eagle%20Tools/lbr/mbed-HDK-IC.lbr
+raspberrypi_bastelstube_v13.lbr: https://github.com/erlerobot/PXF2/blob/master/libraries/raspberrypi_bastelstube_v13.lbr
+

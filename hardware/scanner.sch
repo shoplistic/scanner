@@ -5252,15 +5252,15 @@ Metric Code Size 5664</description>
 <attribute name="NAME" x="46.355" y="209.55" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="35.56" y="209.55" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="POWER" gate="G$1" x="38.1" y="53.34" smashed="yes" rot="R180">
-<attribute name="NAME" x="44.45" y="47.625" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="44.45" y="58.42" size="1.778" layer="96" rot="R180"/>
+<instance part="POWER" gate="G$1" x="203.2" y="142.24" smashed="yes" rot="R180">
+<attribute name="NAME" x="209.55" y="136.525" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="209.55" y="147.32" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND6" gate="1" x="48.26" y="45.72" smashed="yes">
-<attribute name="VALUE" x="45.72" y="43.18" size="1.778" layer="96"/>
+<instance part="GND6" gate="1" x="213.36" y="134.62" smashed="yes">
+<attribute name="VALUE" x="210.82" y="132.08" size="1.778" layer="96"/>
 </instance>
-<instance part="P+3" gate="1" x="48.26" y="66.04" smashed="yes">
-<attribute name="VALUE" x="50.8" y="68.58" size="1.778" layer="96" rot="R180"/>
+<instance part="P+3" gate="1" x="213.36" y="154.94" smashed="yes">
+<attribute name="VALUE" x="215.9" y="157.48" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -5344,8 +5344,8 @@ Metric Code Size 5664</description>
 </segment>
 <segment>
 <pinref part="POWER" gate="G$1" pin="1"/>
-<wire x1="40.64" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="50.8" x2="48.26" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="139.7" x2="213.36" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="139.7" x2="213.36" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
 </net>
@@ -5416,7 +5416,7 @@ Metric Code Size 5664</description>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<wire x1="48.26" y1="63.5" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="152.4" x2="213.36" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -5464,8 +5464,8 @@ Metric Code Size 5664</description>
 <net name="N$2" class="0">
 <segment>
 <pinref part="POWER" gate="G$1" pin="2"/>
-<wire x1="40.64" y1="53.34" x2="48.26" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="53.34" x2="48.26" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="142.24" x2="213.36" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="142.24" x2="213.36" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
