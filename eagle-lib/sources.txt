@@ -2,4 +2,6 @@ dword1511-pmic-dcdc.lbr: https://github.com/dword1511/eagle-lbr/blob/master/dwor
 FLYFISH.lbr: http://www.flyfish-tech.com/FF32/index.php
 mbed-HDK-IC.lbr: https://github.com/ARMmbed/mbed-HDK/blob/master/Eagle%20Tools/lbr/mbed-HDK-IC.lbr
 raspberrypi_bastelstube_v13.lbr: https://github.com/erlerobot/PXF2/blob/master/libraries/raspberrypi_bastelstube_v13.lbr
+LW_W5SM-JYKY-JKQL-1.lbr: https://componentsearchengine.com/LW+W5SM-JYKY-JKQL-1/OSRAM+Opto+Semiconductors
+m-pad-2.1.lbr: https://www.diymodules.org/eagle-show-library?type=usr&id=1858&part=m-pad-2.1.lbr
 
