@@ -9326,7 +9326,7 @@ Source: www.kingbright.com</description>
 <part name="R7" library="resistor" deviceset="R-EU_" device="M0805" value="330">
 <attribute name="TOLERANCE" value="5%"/>
 </part>
-<part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2"/>
+<part name="POWER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -9419,8 +9419,8 @@ Source: www.kingbright.com</description>
 <attribute name="NAME" x="79.375" y="209.55" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="68.58" y="209.55" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="GND6" gate="1" x="81.28" y="58.42" smashed="yes">
-<attribute name="VALUE" x="78.74" y="55.88" size="1.778" layer="96"/>
+<instance part="GND6" gate="1" x="81.28" y="53.34" smashed="yes">
+<attribute name="VALUE" x="78.74" y="50.8" size="1.778" layer="96"/>
 </instance>
 <instance part="P+3" gate="1" x="81.28" y="78.74" smashed="yes">
 <attribute name="VALUE" x="83.82" y="81.28" size="1.778" layer="96" rot="R180"/>
@@ -9503,7 +9503,7 @@ Source: www.kingbright.com</description>
 <attribute name="NAME" x="50.5714" y="154.94" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="52.832" y="154.94" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="JP2" gate="A" x="71.12" y="63.5" smashed="yes">
+<instance part="POWER" gate="A" x="71.12" y="63.5" smashed="yes">
 <attribute name="NAME" x="62.23" y="69.215" size="1.778" layer="95"/>
 <attribute name="VALUE" x="62.23" y="58.42" size="1.778" layer="96"/>
 </instance>
@@ -9584,10 +9584,10 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <wire x1="73.66" y1="63.5" x2="81.28" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="63.5" x2="81.28" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="63.5" x2="81.28" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<pinref part="JP2" gate="A" pin="4"/>
-<pinref part="JP2" gate="A" pin="3"/>
+<pinref part="POWER" gate="A" pin="4"/>
+<pinref part="POWER" gate="A" pin="3"/>
 <wire x1="66.04" y1="63.5" x2="73.66" y2="63.5" width="0.1524" layer="91"/>
 <junction x="73.66" y="63.5"/>
 </segment>
@@ -9707,9 +9707,9 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <wire x1="73.66" y1="66.04" x2="81.28" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="2"/>
+<pinref part="POWER" gate="A" pin="2"/>
 <wire x1="81.28" y1="66.04" x2="81.28" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="1"/>
+<pinref part="POWER" gate="A" pin="1"/>
 <wire x1="66.04" y1="66.04" x2="73.66" y2="66.04" width="0.1524" layer="91"/>
 <junction x="73.66" y="66.04"/>
 </segment>
