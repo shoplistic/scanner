@@ -9305,7 +9305,7 @@ Source: www.kingbright.com</description>
 <attribute name="TOLERANCE" value="5%"/>
 </part>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
-<part name="SWITCH" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="TRIGGER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
@@ -9427,7 +9427,7 @@ Source: www.kingbright.com</description>
 <instance part="+3V2" gate="G$1" x="127" y="241.3" smashed="yes">
 <attribute name="VALUE" x="129.54" y="243.84" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SWITCH" gate="G$1" x="71.12" y="96.52" smashed="yes" rot="R180">
+<instance part="TRIGGER" gate="G$1" x="71.12" y="96.52" smashed="yes" rot="R180">
 <attribute name="NAME" x="77.47" y="90.805" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="77.47" y="101.6" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -9572,7 +9572,7 @@ Source: www.kingbright.com</description>
 <wire x1="73.66" y1="93.98" x2="81.28" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="81.28" y1="93.98" x2="81.28" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="SWITCH" gate="G$1" pin="1"/>
+<pinref part="TRIGGER" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -9684,7 +9684,7 @@ Source: www.kingbright.com</description>
 <wire x1="127" y1="238.76" x2="127" y2="236.22" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="EEPROM_SDA" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="223.52" x2="101.6" y2="223.52" width="0.1524" layer="91"/>
@@ -9726,13 +9726,13 @@ Source: www.kingbright.com</description>
 <pinref part="POWER" gate="G$1" pin="TIP"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="TRIGGER" class="0">
 <segment>
 <wire x1="73.66" y1="96.52" x2="106.68" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="96.52" x2="106.68" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="K1" gate="G$1" pin="16"/>
 <wire x1="106.68" y1="157.48" x2="91.44" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="SWITCH" gate="G$1" pin="2"/>
+<pinref part="TRIGGER" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -9742,7 +9742,7 @@ Source: www.kingbright.com</description>
 <pinref part="U2" gate="G$1" pin="CTRL"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="EEPROM_WP" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="WP"/>
 <wire x1="93.98" y1="218.44" x2="93.98" y2="210.82" width="0.1524" layer="91"/>
@@ -9755,7 +9755,7 @@ Source: www.kingbright.com</description>
 <wire x1="127" y1="210.82" x2="127" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="EEPROM_SCL" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="111.76" y1="220.98" x2="111.76" y2="226.06" width="0.1524" layer="91"/>
@@ -9841,14 +9841,14 @@ Source: www.kingbright.com</description>
 <wire x1="43.18" y1="152.4" x2="45.72" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$16" class="0">
+<net name="LED4" class="0">
 <segment>
 <pinref part="K1" gate="G$1" pin="13"/>
 <wire x1="76.2" y1="160.02" x2="55.88" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$19" class="0">
+<net name="LED3" class="0">
 <segment>
 <pinref part="K1" gate="G$1" pin="11"/>
 <wire x1="76.2" y1="162.56" x2="58.42" y2="162.56" width="0.1524" layer="91"/>
@@ -9857,7 +9857,7 @@ Source: www.kingbright.com</description>
 <pinref part="R5" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$20" class="0">
+<net name="LED5" class="0">
 <segment>
 <pinref part="K1" gate="G$1" pin="15"/>
 <wire x1="76.2" y1="157.48" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
