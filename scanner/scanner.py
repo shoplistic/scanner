@@ -7,8 +7,8 @@ import datetime, imutils, time, cv2
 from imutils.video import VideoStream
 from pyzbar import pyzbar
 from sys import argv
-from lib import api, status
-from lib.switch import switch
+from lib import api, status, trigger
+# from lib.trigger import trigger
 
 debug = False
 
@@ -27,7 +27,7 @@ while True:
     try:
 
         # Don't bother running the CPU-intensive stuff unless the drawer is open
-        if not switch.is_pressed:
+        if trigger.sensor.is_pressed:
             # print('closed')
             time.sleep(0.5)
             continue
