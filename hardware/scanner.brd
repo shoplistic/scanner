@@ -2608,7 +2608,7 @@ design rules under a new name.</description>
 <attribute name="SUPPLIER" value="CATALYST SEMICONDUCTOR" x="59" y="45" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="55.5456" y="39.285" size="2.0828" layer="27" ratio="10" rot="SR0"/>
 </element>
-<element name="R3" library="resistor" package="M0805" value="1k" x="57" y="39" smashed="yes" rot="R90">
+<element name="R3" library="resistor" package="M0805" value="3k9" x="57" y="39" smashed="yes" rot="R90">
 <attribute name="NAME" x="57" y="37" size="0.8128" layer="25" rot="R180" align="center"/>
 <attribute name="TOLERANCE" value="5%" x="57" y="39" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="59.286" y="37.984" size="1.27" layer="27" rot="R90"/>
@@ -2627,7 +2627,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="10.875" y="40" size="0.8128" layer="25" rot="R270"/>
 <attribute name="VALUE" x="8.1" y="40" size="1.016" layer="27" rot="R270"/>
 </element>
-<element name="R4" library="resistor" package="M0805" value="0.57" x="9" y="33" smashed="yes" rot="R270">
+<element name="R4" library="resistor" package="M0805" value="0.56" x="9" y="33" smashed="yes" rot="R270">
 <attribute name="NAME" x="10.016" y="34.016" size="0.8128" layer="25" rot="R270"/>
 <attribute name="TOLERANCE" value="5%" x="9" y="33" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="6.714" y="34.016" size="1.27" layer="27" rot="R270"/>
@@ -2878,19 +2878,6 @@ design rules under a new name.</description>
 <wire x1="5" y1="25.54" x2="7.54" y2="25.54" width="0.2032" layer="16"/>
 <wire x1="7.54" y1="25.54" x2="8" y2="26" width="0.2032" layer="16"/>
 </signal>
-<signal name="LED_PWM">
-<contactref element="GPIO" pad="12"/>
-<contactref element="U2" pad="2"/>
-<wire x1="7" y1="42" x2="7" y2="40.3001" width="0.2032" layer="1"/>
-<via x="7" y="42" extent="1-16" drill="0.35"/>
-<wire x1="7" y1="42" x2="7" y2="48" width="0.2032" layer="16"/>
-<wire x1="7" y1="48" x2="8.3556" y2="49.3556" width="0.2032" layer="16"/>
-<wire x1="21.07" y1="53.16974375" x2="21.07" y2="53.77" width="0.2032" layer="16"/>
-<wire x1="19.6984" y1="51.79814375" x2="21.07" y2="53.16974375" width="0.2032" layer="16"/>
-<wire x1="18.09244375" y1="49.3556" x2="19.6984" y2="50.96155625" width="0.2032" layer="16"/>
-<wire x1="19.6984" y1="50.96155625" x2="19.6984" y2="51.79814375" width="0.2032" layer="16"/>
-<wire x1="8.3556" y1="49.3556" x2="18.09244375" y2="49.3556" width="0.2032" layer="16"/>
-</signal>
 <signal name="EEPROM_WP">
 <contactref element="U1" pad="7"/>
 <contactref element="JP1" pad="1"/>
@@ -3037,6 +3024,18 @@ design rules under a new name.</description>
 <wire x1="21" y1="46" x2="25" y2="46" width="0.3048" layer="16"/>
 <wire x1="25" y1="46" x2="26.15" y2="47.15" width="0.3048" layer="16"/>
 <wire x1="26.15" y1="47.15" x2="26.15" y2="51.23" width="0.3048" layer="16"/>
+</signal>
+<signal name="LED_CTRL">
+<contactref element="GPIO" pad="12"/>
+<wire x1="21.07" y1="53.77" x2="19.546" y2="52.246" width="0.2032" layer="16"/>
+<wire x1="19.546" y1="52.246" x2="19.546" y2="50.80915625" width="0.2032" layer="16"/>
+<wire x1="19.546" y1="50.80915625" x2="18.09244375" y2="49.3556" width="0.2032" layer="16"/>
+<wire x1="8.8527" y1="49.3556" x2="7" y2="47.5029" width="0.2032" layer="16"/>
+<wire x1="18.09244375" y1="49.3556" x2="8.8527" y2="49.3556" width="0.2032" layer="16"/>
+<wire x1="7" y1="47.5029" x2="7" y2="42" width="0.2032" layer="16"/>
+<contactref element="U2" pad="2"/>
+<wire x1="7" y1="40.3001" x2="7" y2="42" width="0.2032" layer="1"/>
+<via x="7" y="42" extent="1-16" drill="0.35"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
