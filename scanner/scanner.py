@@ -27,7 +27,7 @@ while True:
     try:
 
         # Don't bother running the CPU-intensive stuff unless the drawer is open
-        if trigger.sensor.is_pressed:
+        if not trigger.sensor.is_pressed:
             # print('closed')
             time.sleep(0.5)
             continue

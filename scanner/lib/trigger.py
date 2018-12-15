@@ -1,7 +1,7 @@
 from gpiozero import Button
 import status, led
 
-sensor = Button(23)
+sensor = Button(24)
 
 def on():
     print('Open')
@@ -13,10 +13,5 @@ def off():
     led.off()
     status.blue.off()
 
-sensor.when_pressed = off
-sensor.when_released = on
-
-if sensor.is_pressed:
-    off()
-else:
-    on()
+sensor.when_pressed = on
+sensor.when_released = off
