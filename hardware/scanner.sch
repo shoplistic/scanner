@@ -9434,7 +9434,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </class>
 </classes>
 <parts>
-<part name="K1" library="FLYFISH" deviceset="PIN20X2" device=""/>
+<part name="GPIO" library="FLYFISH" deviceset="PIN20X2" device=""/>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R1" library="resistor" deviceset="R-EU_" device="M0805" value="3k9">
@@ -9501,9 +9501,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="POWER" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="2.1MMJACK" device="THM" package3d_urn="urn:adsk.eagle:package:6240341/1"/>
 <part name="TRIGGER" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-?-03" device="05-7038"/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="M0805" value="10k">
-<attribute name="TOLERANCE" value="5%"/>
-</part>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9515,7 +9513,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <text x="374.65" y="5.08" size="2.54" layer="94" ratio="10">v0.1</text>
 </plain>
 <instances>
-<instance part="K1" gate="G$1" x="83.82" y="152.4" smashed="yes" rot="R180">
+<instance part="GPIO" gate="G$1" x="83.82" y="152.4" smashed="yes" rot="R180">
 <attribute name="VALUE" x="87.63" y="180.34" size="1.778" layer="96" rot="R180"/>
 <attribute name="NAME" x="87.63" y="123.698" size="1.778" layer="95" rot="R180"/>
 </instance>
@@ -9692,10 +9690,8 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <instance part="P+4" gate="1" x="91.44" y="104.14" smashed="yes">
 <attribute name="VALUE" x="93.98" y="106.68" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R8" gate="G$1" x="99.06" y="93.98" smashed="yes" rot="R180">
-<attribute name="TOLERANCE" x="99.06" y="93.98" size="1.778" layer="96" rot="R180" display="off"/>
-<attribute name="NAME" x="98.8314" y="96.52" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="101.092" y="96.52" size="1.778" layer="96" rot="R90"/>
+<instance part="GND13" gate="1" x="177.8" y="170.18" smashed="yes">
+<attribute name="VALUE" x="175.26" y="167.64" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -9708,35 +9704,35 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="139.7" y1="228.6" x2="139.7" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="K1" gate="G$1" pin="9"/>
+<pinref part="GPIO" gate="G$1" pin="9"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="76.2" y1="165.1" x2="73.66" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="165.1" x2="73.66" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="25"/>
+<pinref part="GPIO" gate="G$1" pin="25"/>
 <wire x1="73.66" y1="144.78" x2="73.66" y2="127" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="127" x2="73.66" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="144.78" x2="73.66" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="39"/>
+<pinref part="GPIO" gate="G$1" pin="39"/>
 <wire x1="76.2" y1="127" x2="73.66" y2="127" width="0.1524" layer="91"/>
 <junction x="73.66" y="144.78"/>
 <junction x="73.66" y="127"/>
 </segment>
 <segment>
-<pinref part="K1" gate="G$1" pin="6"/>
+<pinref part="GPIO" gate="G$1" pin="6"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="91.44" y1="170.18" x2="93.98" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="170.18" x2="93.98" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="14"/>
+<pinref part="GPIO" gate="G$1" pin="14"/>
 <wire x1="93.98" y1="160.02" x2="93.98" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="152.4" x2="93.98" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="139.7" x2="93.98" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="134.62" x2="93.98" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="160.02" x2="93.98" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="20"/>
+<pinref part="GPIO" gate="G$1" pin="20"/>
 <wire x1="91.44" y1="152.4" x2="93.98" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="30"/>
+<pinref part="GPIO" gate="G$1" pin="30"/>
 <wire x1="91.44" y1="139.7" x2="93.98" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="34"/>
+<pinref part="GPIO" gate="G$1" pin="34"/>
 <wire x1="91.44" y1="134.62" x2="93.98" y2="134.62" width="0.1524" layer="91"/>
 <junction x="93.98" y="160.02"/>
 <junction x="93.98" y="152.4"/>
@@ -9821,6 +9817,15 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="91.44" y1="83.82" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="3"/>
+<pinref part="LED2" gate="G$1" pin="3"/>
+<wire x1="185.42" y1="180.34" x2="185.42" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="180.34" x2="177.8" y2="180.34" width="0.1524" layer="91"/>
+<junction x="185.42" y="180.34"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="177.8" y1="180.34" x2="177.8" y2="172.72" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -9844,11 +9849,11 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="139.7" y1="238.76" x2="139.7" y2="236.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="K1" gate="G$1" pin="1"/>
+<pinref part="GPIO" gate="G$1" pin="1"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <wire x1="76.2" y1="175.26" x2="71.12" y2="175.26" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="175.26" x2="71.12" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="17"/>
+<pinref part="GPIO" gate="G$1" pin="17"/>
 <wire x1="76.2" y1="154.94" x2="71.12" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="154.94" x2="71.12" y2="175.26" width="0.1524" layer="91"/>
 <junction x="71.12" y="175.26"/>
@@ -9864,7 +9869,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="223.52" x2="101.6" y2="223.52" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="223.52" x2="101.6" y2="226.06" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="28"/>
+<pinref part="GPIO" gate="G$1" pin="28"/>
 <wire x1="91.44" y1="142.24" x2="101.6" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="142.24" x2="101.6" y2="223.52" width="0.1524" layer="91"/>
 <junction x="101.6" y="223.52"/>
@@ -9873,11 +9878,11 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="2"/>
+<pinref part="GPIO" gate="G$1" pin="2"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <wire x1="91.44" y1="175.26" x2="93.98" y2="175.26" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="175.26" x2="93.98" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="4"/>
+<pinref part="GPIO" gate="G$1" pin="4"/>
 <wire x1="91.44" y1="172.72" x2="93.98" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="172.72" x2="93.98" y2="175.26" width="0.1524" layer="91"/>
 <junction x="93.98" y="175.26"/>
@@ -9905,27 +9910,20 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="88.9" y1="93.98" x2="91.44" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="93.98" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="P+4" gate="1" pin="+5V"/>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="91.44" y1="93.98" x2="93.98" y2="93.98" width="0.1524" layer="91"/>
-<junction x="91.44" y="93.98"/>
 </segment>
 </net>
 <net name="TRIGGER" class="0">
 <segment>
 <wire x1="88.9" y1="88.9" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="88.9" x2="106.68" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="K1" gate="G$1" pin="16"/>
-<wire x1="106.68" y1="93.98" x2="106.68" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="GPIO" gate="G$1" pin="16"/>
+<wire x1="106.68" y1="88.9" x2="106.68" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="157.48" x2="91.44" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="TRIGGER" gate="-3" pin="S"/>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="104.14" y1="93.98" x2="106.68" y2="93.98" width="0.1524" layer="91"/>
-<junction x="106.68" y="93.98"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="LED_PWM" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="12"/>
+<pinref part="GPIO" gate="G$1" pin="12"/>
 <wire x1="91.44" y1="162.56" x2="132.08" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="CTRL"/>
 </segment>
@@ -9949,7 +9947,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="111.76" y1="220.98" x2="111.76" y2="226.06" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="220.98" x2="111.76" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="SCL"/>
-<pinref part="K1" gate="G$1" pin="27"/>
+<pinref part="GPIO" gate="G$1" pin="27"/>
 <wire x1="76.2" y1="142.24" x2="66.04" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="142.24" x2="66.04" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="111.76" x2="111.76" y2="111.76" width="0.1524" layer="91"/>
@@ -9965,7 +9963,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <pinref part="C2" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="LED_FB" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="FB"/>
 <wire x1="157.48" y1="162.56" x2="175.26" y2="162.56" width="0.1524" layer="91"/>
@@ -9977,7 +9975,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <wire x1="205.74" y1="162.56" x2="205.74" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="LED_SW" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="SW"/>
 <wire x1="157.48" y1="165.1" x2="172.72" y2="165.1" width="0.1524" layer="91"/>
@@ -10031,14 +10029,14 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </net>
 <net name="LED4" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="13"/>
+<pinref part="GPIO" gate="G$1" pin="13"/>
 <wire x1="76.2" y1="160.02" x2="55.88" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="LED3" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="11"/>
+<pinref part="GPIO" gate="G$1" pin="11"/>
 <wire x1="76.2" y1="162.56" x2="58.42" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="162.56" x2="58.42" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="167.64" x2="55.88" y2="167.64" width="0.1524" layer="91"/>
@@ -10047,7 +10045,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </net>
 <net name="LED5" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="15"/>
+<pinref part="GPIO" gate="G$1" pin="15"/>
 <wire x1="76.2" y1="157.48" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="157.48" x2="58.42" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="152.4" x2="55.88" y2="152.4" width="0.1524" layer="91"/>
