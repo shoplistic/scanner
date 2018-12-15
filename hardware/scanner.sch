@@ -9485,16 +9485,16 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="L1" library="m-pad-2.1" deviceset="D53LC" device="" value="10 μH ±20% 1.49A"/>
 <part name="LED1" library="LW_W5SM-JYKY-JKQL-1" deviceset="LW_W5SM-JYKY-JKQL-1" device=""/>
 <part name="LED2" library="LW_W5SM-JYKY-JKQL-1" deviceset="LW_W5SM-JYKY-JKQL-1" device=""/>
-<part name="LED3" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2"/>
+<part name="LED3" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2" value="RED"/>
 <part name="R5" library="resistor" deviceset="R-EU_" device="M0805" value="330">
 <attribute name="TOLERANCE" value="5%"/>
 </part>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="LED4" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2"/>
+<part name="LED4" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2" value="GREEN"/>
 <part name="R6" library="resistor" deviceset="R-EU_" device="M0805" value="330">
 <attribute name="TOLERANCE" value="5%"/>
 </part>
-<part name="LED5" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2"/>
+<part name="LED5" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2" value="BLUE"/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="M0805" value="10k">
 <attribute name="TOLERANCE" value="5%"/>
 </part>
@@ -10055,6 +10055,11 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,149.86,165.1,U2,VIN,+5V,,,"/>
+<approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
+<approved hash="113,1,76.4261,205.503,JP1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
