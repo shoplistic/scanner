@@ -10,7 +10,6 @@
 <grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -23,7 +22,6 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -2399,6 +2397,36 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </package>
 </packages>
 </library>
+<library name="LM1117MPX-3.3_NOPB">
+<description>&lt;Space saving 800-mA low-dropout linear regulator with internal current limit&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SOT230P700X180-4N">
+<description>&lt;b&gt;DCY (R-PDSO-G4)&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-3.15" y="2.3" dx="1.75" dy="0.95" layer="1"/>
+<smd name="2" x="-3.15" y="0" dx="1.75" dy="0.95" layer="1"/>
+<smd name="3" x="-3.15" y="-2.3" dx="1.75" dy="0.95" layer="1"/>
+<smd name="4" x="3.15" y="0" dx="3.2" dy="1.75" layer="1" rot="R90"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-4.275" y1="3.6" x2="4.275" y2="3.6" width="0.05" layer="51"/>
+<wire x1="4.275" y1="3.6" x2="4.275" y2="-3.6" width="0.05" layer="51"/>
+<wire x1="4.275" y1="-3.6" x2="-4.275" y2="-3.6" width="0.05" layer="51"/>
+<wire x1="-4.275" y1="-3.6" x2="-4.275" y2="3.6" width="0.05" layer="51"/>
+<wire x1="-1.75" y1="3.25" x2="1.75" y2="3.25" width="0.1" layer="51"/>
+<wire x1="1.75" y1="3.25" x2="1.75" y2="-3.25" width="0.1" layer="51"/>
+<wire x1="1.75" y1="-3.25" x2="-1.75" y2="-3.25" width="0.1" layer="51"/>
+<wire x1="-1.75" y1="-3.25" x2="-1.75" y2="3.25" width="0.1" layer="51"/>
+<wire x1="-1.75" y1="0.95" x2="0.55" y2="3.25" width="0.1" layer="51"/>
+<wire x1="-1.925" y1="3.25" x2="1.925" y2="3.25" width="0.2" layer="21"/>
+<wire x1="1.925" y1="3.25" x2="1.925" y2="-3.25" width="0.2" layer="21"/>
+<wire x1="1.925" y1="-3.25" x2="-1.925" y2="-3.25" width="0.2" layer="21"/>
+<wire x1="-1.925" y1="-3.25" x2="-1.925" y2="3.25" width="0.2" layer="21"/>
+<wire x1="-4.025" y1="3.125" x2="-2.275" y2="3.125" width="0.2" layer="21"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2643,7 +2671,7 @@ design rules under a new name.</description>
 </element>
 <element name="C1" library="resistor" package="C0805K" value="4.7μF" x="-22.9" y="-13.5" smashed="yes" rot="R270">
 <attribute name="DIELECTRIC" value="X7R" x="-6.0725" y="1.4225" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="-21.4" y="-13.5" size="0.8128" layer="25" font="fixed" rot="R270" align="center"/>
+<attribute name="NAME" x="-22.9" y="-16.5" size="0.8128" layer="25" font="fixed" rot="R270" align="center"/>
 <attribute name="VALUE" x="-24.8" y="-12.5" size="1.016" layer="27" rot="R270"/>
 </element>
 <element name="R4" library="resistor" package="M0805" value="0.56" x="-24.96" y="-17.9725" smashed="yes" rot="R270">
@@ -2688,17 +2716,17 @@ design rules under a new name.</description>
 <attribute name="RS_PRICE-STOCK" value="" x="37.55" y="-41.2875" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="18.5" y="-27.4" size="1.27" layer="27" rot="R90" align="center"/>
 </element>
-<element name="R5" library="resistor" package="M0805" value="" x="-20.5" y="-7.5" smashed="yes" rot="R90">
-<attribute name="NAME" x="-20.5" y="-10.5" size="0.8128" layer="25" font="fixed" rot="R90" align="center"/>
-<attribute name="TOLERANCE" value="5%" x="-1.45" y="-26.55" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="-18.214" y="-8.516" size="1.27" layer="27" rot="R90"/>
+<element name="R6" library="resistor" package="M0805" value="" x="-18.8" y="-13.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="-18.8" y="-16.5" size="0.8128" layer="25" font="fixed" rot="R90" align="center"/>
+<attribute name="TOLERANCE" value="5%" x="0.25" y="-32.55" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="-16.514" y="-14.516" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="R6" library="resistor" package="M0805" value="" x="-18.4" y="-7.5" smashed="yes" rot="R270">
-<attribute name="NAME" x="-18.5" y="-10.5" size="0.8128" layer="25" font="fixed" rot="R270" align="center"/>
-<attribute name="TOLERANCE" value="5%" x="-43.165" y="6.7875" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="-20.686" y="-6.484" size="1.27" layer="27" rot="R270"/>
+<element name="R5" library="resistor" package="M0805" value="" x="-16.7" y="-13.5" smashed="yes" rot="R270">
+<attribute name="NAME" x="-16.7" y="-16.5" size="0.8128" layer="25" font="fixed" rot="R270" align="center"/>
+<attribute name="TOLERANCE" value="5%" x="-41.465" y="0.7875" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="-18.986" y="-12.484" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="R7" library="resistor" package="M0805" value="3k9" x="28.1" y="-14" smashed="yes" rot="R270">
+<element name="R8" library="resistor" package="M0805" value="3k9" x="28.1" y="-14" smashed="yes" rot="R270">
 <attribute name="NAME" x="28.116" y="-16.484" size="0.8128" layer="25" font="fixed" rot="R180" align="center"/>
 <attribute name="TOLERANCE" value="5%" x="42.3875" y="-14" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="25.814" y="-12.984" size="1.27" layer="27" rot="R270"/>
@@ -2708,7 +2736,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="29" y="-5" size="0.8128" layer="25" font="fixed" align="center"/>
 <attribute name="VALUE" x="25" y="-6.9" size="1.016" layer="27"/>
 </element>
-<element name="R8" library="resistor" package="M0805" value="3k9" x="26" y="-14" smashed="yes" rot="R270">
+<element name="R9" library="resistor" package="M0805" value="3k9" x="26" y="-14" smashed="yes" rot="R270">
 <attribute name="NAME" x="26.016" y="-16.484" size="0.8128" layer="25" font="fixed" rot="R180" align="center"/>
 <attribute name="TOLERANCE" value="5%" x="29.4925" y="-9.555" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="23.714" y="-12.984" size="1.27" layer="27" rot="R270"/>
@@ -2722,7 +2750,7 @@ design rules under a new name.</description>
 <attribute name="SUPPLIER" value="CATALYST SEMICONDUCTOR" x="39.0175" y="-6.7775" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="29.4544" y="-3.285" size="2.0828" layer="27" ratio="10" rot="SR180"/>
 </element>
-<element name="R9" library="resistor" package="M0805" value="3k9" x="23.8" y="-14" smashed="yes" rot="R90">
+<element name="R10" library="resistor" package="M0805" value="3k9" x="23.8" y="-14" smashed="yes" rot="R90">
 <attribute name="NAME" x="23.784" y="-16.516" size="0.8128" layer="25" font="fixed" rot="R180" align="center"/>
 <attribute name="TOLERANCE" value="5%" x="26.0225" y="-35.59" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="26.086" y="-15.016" size="1.27" layer="27" rot="R90"/>
@@ -2738,6 +2766,23 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="PJ-102AH" x="-27.7" y="-43.9" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="490-PJ-102AH" x="-27.7" y="-43.9" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="-34.111" y="-39.865" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="R7" library="resistor" package="M0805" value="" x="-20.9" y="-13.5" smashed="yes" rot="R270">
+<attribute name="NAME" x="-20.9" y="-16.5" size="0.8128" layer="25" font="fixed" rot="R270" align="center"/>
+<attribute name="TOLERANCE" value="5%" x="-20.9" y="-13.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="-23.186" y="-12.484" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="U3" library="LM1117MPX-3.3_NOPB" package="SOT230P700X180-4N" value="LM1117MPX-3.3_NOPB" x="-18.5" y="-7.5" smashed="yes" rot="R180">
+<attribute name="DESCRIPTION" value="Space saving 800-mA low-dropout linear regulator with internal current limit" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="1.8mm" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LM1117MPX-3.3/NOPB" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="926-LM1117MPX3.3NOPB" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=926-LM1117MPX3.3NOPB" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="-15.5" y="-3" size="1.27" layer="25" rot="R180" align="center"/>
+<attribute name="RS_PART_NUMBER" value="" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="" x="-18.5" y="-7.5" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="-18.5" y="-7.5" size="1.27" layer="27" rot="R180" align="center"/>
 </element>
 </elements>
 <signals>
@@ -2787,9 +2832,7 @@ design rules under a new name.</description>
 <contactref element="C1" pad="2"/>
 <contactref element="R4" pad="2"/>
 <contactref element="C3" pad="2"/>
-<contactref element="LED1" pad="3"/>
-<contactref element="LED2" pad="3"/>
-<contactref element="R6" pad="1"/>
+<contactref element="R5" pad="1"/>
 <contactref element="C4" pad="2"/>
 <contactref element="U1" pad="4"/>
 <contactref element="U1" pad="3"/>
@@ -2798,16 +2841,17 @@ design rules under a new name.</description>
 <contactref element="JP1" pad="2"/>
 <contactref element="POWER" pad="2"/>
 <contactref element="POWER" pad="3"/>
+<contactref element="U3" pad="1"/>
 </signal>
 <signal name="+3V3">
 <contactref element="GPIO" pad="1"/>
 <contactref element="GPIO" pad="17"/>
-<contactref element="R5" pad="2"/>
+<contactref element="R6" pad="2"/>
+<contactref element="R9" pad="2"/>
 <contactref element="R8" pad="2"/>
-<contactref element="R7" pad="2"/>
 <contactref element="U1" pad="8"/>
 <contactref element="C4" pad="1"/>
-<contactref element="R9" pad="1"/>
+<contactref element="R10" pad="1"/>
 <wire x1="28.1" y1="-14.95" x2="26" y2="-14.95" width="0.508" layer="1"/>
 <wire x1="26" y1="-14.95" x2="23.8" y2="-14.95" width="0.508" layer="1"/>
 <wire x1="23.8" y1="-14.95" x2="21.45" y2="-14.95" width="0.508" layer="1"/>
@@ -2817,20 +2861,26 @@ design rules under a new name.</description>
 <wire x1="25" y1="-5" x2="21" y2="-5" width="0.508" layer="1"/>
 <wire x1="21" y1="-5" x2="19.5" y2="-3.5" width="0.508" layer="1"/>
 <wire x1="19.5" y1="-3.5" x2="-3" y2="-3.5" width="0.508" layer="1"/>
-<wire x1="-3" y1="-3.5" x2="-3.81" y2="-2.69" width="0.508" layer="1"/>
+<wire x1="-3" y1="-3.5" x2="-3.75" y2="-2.75" width="0.508" layer="1"/>
+<wire x1="-3.75" y1="-2.75" x2="-3.81" y2="-2.69" width="0.508" layer="1"/>
 <wire x1="-3.81" y1="-2.69" x2="-3.81" y2="-1.27" width="0.508" layer="1"/>
-<wire x1="-24.13" y1="-1.27" x2="-24.13" y2="-2.37" width="0.508" layer="1"/>
-<wire x1="-24.13" y1="-2.37" x2="-23" y2="-3.5" width="0.508" layer="1"/>
-<wire x1="-23" y1="-3.5" x2="-20.5" y2="-3.5" width="0.508" layer="1"/>
-<wire x1="-20.5" y1="-3.5" x2="-4.62" y2="-3.5" width="0.508" layer="1"/>
-<wire x1="-4.62" y1="-3.5" x2="-3.81" y2="-2.69" width="0.508" layer="1"/>
 <wire x1="23.5362" y1="-10.905" x2="21.095" y2="-10.905" width="0.508" layer="1"/>
 <wire x1="21.095" y1="-10.905" x2="21" y2="-11" width="0.508" layer="1"/>
-<wire x1="-20.5" y1="-6.55" x2="-20.5" y2="-3.5" width="0.508" layer="1"/>
+<wire x1="-18.8" y1="-12.55" x2="-18.8" y2="-11" width="0.508" layer="1"/>
+<via x="-18.8" y="-11" extent="1-16" drill="0.35"/>
+<wire x1="-18.8" y1="-11" x2="-18.8" y2="-3.7" width="0.508" layer="16"/>
+<wire x1="-18.8" y1="-3.7" x2="-19" y2="-3.5" width="0.508" layer="16"/>
+<wire x1="-19" y1="-3.5" x2="-19.5" y2="-3" width="0.508" layer="16"/>
+<wire x1="-19.5" y1="-3" x2="-23.5" y2="-3" width="0.508" layer="16"/>
+<wire x1="-23.5" y1="-3" x2="-24.13" y2="-2.37" width="0.508" layer="16"/>
+<wire x1="-24.13" y1="-2.37" x2="-24.13" y2="-1.27" width="0.508" layer="16"/>
+<wire x1="-3.75" y1="-2.75" x2="-4.5" y2="-3.5" width="0.508" layer="1"/>
+<wire x1="-4.5" y1="-3.5" x2="-19" y2="-3.5" width="0.508" layer="1"/>
+<via x="-19" y="-3.5" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="EEPROM_SCL">
 <contactref element="GPIO" pad="28"/>
-<contactref element="R8" pad="1"/>
+<contactref element="R9" pad="1"/>
 <contactref element="U1" pad="6"/>
 <wire x1="26" y1="-9" x2="26" y2="-13.05" width="0.3048" layer="1"/>
 <wire x1="23.5362" y1="-8.365" x2="25" y2="-8.365" width="0.3048" layer="1"/>
@@ -2846,21 +2896,9 @@ design rules under a new name.</description>
 <contactref element="GPIO" pad="2"/>
 <contactref element="GPIO" pad="4"/>
 <contactref element="TRIGGER" pad="1"/>
-<contactref element="U2" pad="1"/>
-<contactref element="C1" pad="1"/>
-<contactref element="L1" pad="1"/>
-<wire x1="-25.5" y1="-0.1" x2="-24.13" y2="1.27" width="0.6096" layer="1"/>
-<wire x1="-24.23223125" y1="-5.73223125" x2="-25.5" y2="-4.4644625" width="0.6096" layer="1"/>
-<wire x1="-25.5" y1="-4.4644625" x2="-25.5" y2="-0.1" width="0.6096" layer="1"/>
-<wire x1="-23.5" y1="-6.4644625" x2="-24.23223125" y2="-5.73223125" width="0.6096" layer="1"/>
-<wire x1="-25.05" y1="-12.1999" x2="-23.5" y2="-10.6499" width="0.6096" layer="1"/>
-<wire x1="-23.5" y1="-10.6499" x2="-23.5" y2="-6.4644625" width="0.6096" layer="1"/>
-<wire x1="-23.5" y1="-10.6499" x2="-22.9" y2="-11.2499" width="0.6096" layer="1"/>
-<wire x1="-22.9" y1="-11.2499" x2="-22.9" y2="-12.5" width="0.6096" layer="1"/>
-<wire x1="-24.13" y1="1.27" x2="-25.5" y2="-0.1" width="0.6096" layer="16"/>
 <wire x1="-25.5" y1="-3" x2="-26.5" y2="-4" width="0.6096" layer="16"/>
 <wire x1="-28.6" y1="-4" x2="-29.5" y2="-4.9" width="0.6096" layer="16"/>
-<wire x1="-25.5" y1="-0.1" x2="-25.5" y2="-3" width="0.6096" layer="16"/>
+<wire x1="-25.5" y1="-3" x2="-25.5" y2="-0.1" width="0.6096" layer="16"/>
 <wire x1="-26.5" y1="-4" x2="-28.6" y2="-4" width="0.6096" layer="16"/>
 <contactref element="POWER" pad="1"/>
 <wire x1="-24.7" y1="-39.6" x2="-27.1" y2="-39.6" width="0.6096" layer="16"/>
@@ -2869,7 +2907,13 @@ design rules under a new name.</description>
 <wire x1="-29.5" y1="-32.7" x2="-29.5" y2="-37.2" width="0.6096" layer="16"/>
 <wire x1="-27.4" y1="-32.74" x2="-29.46" y2="-32.74" width="0.6096" layer="16"/>
 <wire x1="-29.46" y1="-32.74" x2="-29.5" y2="-32.7" width="0.6096" layer="16"/>
-<wire x1="-24.13" y1="1.27" x2="-21.59" y2="1.27" width="0.6096" layer="1"/>
+<contactref element="U3" pad="3"/>
+<wire x1="-25.5" y1="-0.1" x2="-24.13" y2="1.27" width="0.6096" layer="16"/>
+<wire x1="-21.59" y1="1.27" x2="-24.13" y2="1.27" width="0.6096" layer="1"/>
+<wire x1="-20.32" y1="0" x2="-21.59" y2="1.27" width="0.6096" layer="1"/>
+<wire x1="-15.35" y1="-5.2" x2="-19.3" y2="-5.2" width="0.6096" layer="1"/>
+<wire x1="-19.3" y1="-5.2" x2="-20.32" y2="-4.18" width="0.6096" layer="1"/>
+<wire x1="-20.32" y1="-4.18" x2="-20.32" y2="0" width="0.6096" layer="1"/>
 </signal>
 <signal name="TRIGGER">
 <contactref element="GPIO" pad="16"/>
@@ -2889,7 +2933,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="EEPROM_SDA">
 <contactref element="GPIO" pad="27"/>
-<contactref element="R7" pad="1"/>
+<contactref element="R8" pad="1"/>
 <contactref element="U1" pad="5"/>
 <wire x1="28.1" y1="-13.05" x2="28.1" y2="-12.6" width="0.3048" layer="1"/>
 <wire x1="28.1" y1="-12.6" x2="27" y2="-11.5" width="0.3048" layer="1"/>
@@ -2967,27 +3011,23 @@ design rules under a new name.</description>
 </signal>
 <signal name="LED_CTRL">
 <contactref element="GPIO" pad="12"/>
-<contactref element="U2" pad="2"/>
-<contactref element="R5" pad="1"/>
-<contactref element="R6" pad="2"/>
-<wire x1="-26" y1="-12.1999" x2="-26" y2="-11" width="0.3048" layer="1"/>
-<via x="-26" y="-11" extent="1-16" drill="0.35"/>
-<wire x1="-25.5" y1="-8.5" x2="-26" y2="-9" width="0.3048" layer="16"/>
-<wire x1="-26" y1="-9" x2="-26" y2="-11" width="0.3048" layer="16"/>
-<wire x1="-20.5" y1="-8.45" x2="-18.4" y2="-8.45" width="0.3048" layer="1"/>
-<wire x1="-18.4" y1="-8.45" x2="-17.55" y2="-8.45" width="0.3048" layer="1"/>
-<wire x1="-17.55" y1="-8.45" x2="-17.5" y2="-8.5" width="0.3048" layer="1"/>
-<via x="-17.5" y="-8.5" extent="1-16" drill="0.35"/>
-<wire x1="-17.5" y1="-8.5" x2="-17.8" y2="-8.2" width="0.3048" layer="16"/>
-<wire x1="-11.43" y1="1.27" x2="-11.43" y2="1.77" width="0.3048" layer="16"/>
-<wire x1="-11.43" y1="1.77" x2="-12.1076" y2="2.4476" width="0.3048" layer="16"/>
-<wire x1="-12.1076" y1="2.4476" x2="-16.97293125" y2="2.4476" width="0.3048" layer="16"/>
-<wire x1="-17.8" y1="1.62053125" x2="-16.97293125" y2="2.4476" width="0.3048" layer="16"/>
-<wire x1="-17.8" y1="-8.2" x2="-17.8" y2="1.62053125" width="0.3048" layer="16"/>
-<wire x1="-20.5" y1="-8.45" x2="-21.45" y2="-8.45" width="0.3048" layer="1"/>
-<wire x1="-21.45" y1="-8.45" x2="-21.5" y2="-8.5" width="0.3048" layer="1"/>
-<via x="-21.5" y="-8.5" extent="1-16" drill="0.35"/>
-<wire x1="-21.5" y1="-8.5" x2="-25.5" y2="-8.5" width="0.3048" layer="16"/>
+<contactref element="R6" pad="1"/>
+<contactref element="R5" pad="2"/>
+<contactref element="R7" pad="2"/>
+<wire x1="-11.43" y1="1.27" x2="-12.1444" y2="0.5556" width="0.3048" layer="16"/>
+<wire x1="-12.1444" y1="0.5556" x2="-12.30335625" y2="0.5556" width="0.3048" layer="16"/>
+<wire x1="-14.43293125" y1="-0.1524" x2="-15.0876" y2="-0.80706875" width="0.3048" layer="16"/>
+<wire x1="-15.532" y1="-3.59515" x2="-15.532" y2="-15" width="0.3048" layer="16"/>
+<wire x1="-12.30335625" y1="0.5556" x2="-13.01135625" y2="-0.1524" width="0.3048" layer="16"/>
+<wire x1="-13.01135625" y1="-0.1524" x2="-14.43293125" y2="-0.1524" width="0.3048" layer="16"/>
+<wire x1="-15.0876" y1="-3.15075" x2="-15.532" y2="-3.59515" width="0.3048" layer="16"/>
+<wire x1="-15.0876" y1="-0.80706875" x2="-15.0876" y2="-3.15075" width="0.3048" layer="16"/>
+<wire x1="-15.532" y1="-15" x2="-16.032" y2="-15.5" width="0.3048" layer="16"/>
+<wire x1="-16.032" y1="-15.5" x2="-18.8" y2="-15.5" width="0.3048" layer="16"/>
+<via x="-18.8" y="-15.5" extent="1-16" drill="0.35"/>
+<wire x1="-18.8" y1="-15.5" x2="-18.8" y2="-14.45" width="0.3048" layer="1"/>
+<wire x1="-18.8" y1="-14.45" x2="-20.9" y2="-14.45" width="0.3048" layer="1"/>
+<wire x1="-18.8" y1="-14.45" x2="-16.7" y2="-14.45" width="0.3048" layer="1"/>
 </signal>
 <signal name="LED_COMP">
 <contactref element="U2" pad="5"/>
@@ -3046,7 +3086,7 @@ design rules under a new name.</description>
 <signal name="EEPROM_WP">
 <contactref element="U1" pad="7"/>
 <contactref element="JP1" pad="1"/>
-<contactref element="R9" pad="2"/>
+<contactref element="R10" pad="2"/>
 <wire x1="23.8" y1="-13.05" x2="23.8" y2="-12.7" width="0.3048" layer="1"/>
 <wire x1="25" y1="-11.5" x2="23.8" y2="-12.7" width="0.3048" layer="1"/>
 <wire x1="23.5362" y1="-9.635" x2="24.635" y2="-9.635" width="0.3048" layer="1"/>
@@ -3055,6 +3095,28 @@ design rules under a new name.</description>
 <wire x1="24.73" y1="-19" x2="25" y2="-18.73" width="0.3048" layer="16"/>
 <wire x1="25" y1="-18.73" x2="25" y2="-10" width="0.3048" layer="16"/>
 <via x="25" y="-10" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="LED_CTRL1">
+<contactref element="U2" pad="2"/>
+<contactref element="R7" pad="1"/>
+<wire x1="-26" y1="-12.1999" x2="-26" y2="-11" width="0.508" layer="1"/>
+<via x="-26" y="-11" extent="1-16" drill="0.35"/>
+<wire x1="-26" y1="-11" x2="-20.9" y2="-11" width="0.508" layer="16"/>
+<via x="-20.9" y="-11" extent="1-16" drill="0.35"/>
+<wire x1="-20.9" y1="-11" x2="-20.9" y2="-12.55" width="0.508" layer="1"/>
+</signal>
+<signal name="VCC">
+<contactref element="U2" pad="1"/>
+<contactref element="C1" pad="1"/>
+<contactref element="L1" pad="1"/>
+<wire x1="-23.5" y1="-6.4644625" x2="-24.23223125" y2="-5.73223125" width="0.6096" layer="1"/>
+<wire x1="-25.05" y1="-12.1999" x2="-23.5" y2="-10.6499" width="0.6096" layer="1"/>
+<wire x1="-23.5" y1="-10.6499" x2="-23.5" y2="-7.5" width="0.6096" layer="1"/>
+<wire x1="-23.5" y1="-7.5" x2="-23.5" y2="-6.4644625" width="0.6096" layer="1"/>
+<wire x1="-23.5" y1="-10.6499" x2="-22.9" y2="-11.2499" width="0.6096" layer="1"/>
+<wire x1="-22.9" y1="-11.2499" x2="-22.9" y2="-12.5" width="0.6096" layer="1"/>
+<contactref element="U3" pad="4"/>
+<wire x1="-21.65" y1="-7.5" x2="-23.5" y2="-7.5" width="0.6096" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
