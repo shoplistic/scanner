@@ -1,7 +1,7 @@
 from gpiozero import Button
 import status, led
 
-sensor = Button(24)
+sensor = Button(23)
 
 def on():
     print('Open')
