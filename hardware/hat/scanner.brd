@@ -211,7 +211,7 @@
 <text x="0" y="-24.5" size="1.778" layer="25" font="fixed" align="center">CAMERA
 MODULE</text>
 <text x="0" y="-47" size="2.1844" layer="25" font="fixed" rot="R180" align="center">Scanner HAT</text>
-<text x="0" y="-49" size="1.016" layer="25" font="fixed" rot="R180" align="center">shopper.ink (c) v1.1</text>
+<text x="0" y="-49" size="1.016" layer="25" font="fixed" rot="R180" align="center">shoplistic.com (c) v1.1</text>
 <circle x="-29" y="0" radius="1.55" width="3.1" layer="42"/>
 <hole x="-10.5" y="-14.5" drill="2.2"/>
 <circle x="-10.5" y="-14.5" radius="1.1" width="3.1" layer="41"/>
