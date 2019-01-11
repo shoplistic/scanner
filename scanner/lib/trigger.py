@@ -5,7 +5,7 @@ sensor = Button(23)
 
 def on():
     print('Open')
-    led.on(3)
+    led.on(1)
     status.blue.on()
 
 def off():
