@@ -1,0 +1,11 @@
+[Unit]
+Description=Shoplistic Scanner Service
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/scanner/scanner
+ExecStart=/usr/bin/python2 /home/pi/scanner/scanner/scanner.py
+
+[Install]
+WantedBy=multi-user.target
