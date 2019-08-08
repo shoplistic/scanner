@@ -4,17 +4,23 @@ import os.path
 import simplejson
 
 authFile = './auth.json'
+bearer = list()
 
 def confExists():
     return os.path.isfile(authFile)
 
 def getBearer():
-    if confExists():
-        with open(authFile) as f:
-            conf = json.load(f)
-            return conf['bearer']
+    if len(bearer) == 0:
+        if confExists():
+            print('auth file exists')
+            with open(authFile) as f:
+                conf = json.load(f)
+                bearer.append(conf['bearer'])
+                return conf['bearer']
+        else:
+            return ''
     else:
-        return ''
+        return ''.join(bearer)
 
 def login(username, password):
     r = requests.post('https://api.shoplistic.com/v1/auth', json={ 'username': username, 'password': password })
