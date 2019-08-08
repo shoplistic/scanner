@@ -2,8 +2,8 @@
 
 # Update the system and install packages
 sudo apt update && sudo apt upgrade -y
-sudo apt install libopencv-dev python-opencv libzbar0 python-pip -y
-pip install pyzbar imutils picamera
+sudo apt install libopencv-dev python-opencv libzbar0 python-pip pigpiod -y
+pip install pyzbar imutils picamera requests simplejson gpiozero pigpio
 
 # Enable pigpiod
 sudo systemctl enable pigpiod.service
